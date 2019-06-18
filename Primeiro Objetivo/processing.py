@@ -2,6 +2,8 @@ import sys
 import scipy.io.wavfile as wav
 import numpy as np
 import matplotlib.pyplot as plt
+import time, sys
+from pygame import mixer
 
 """ PROCESS DATA """
 
@@ -100,4 +102,9 @@ def spectrogram(data, freq, NFFT=256, noverlap=128, mode='psd', sides='default')
 if __name__ == '__main__':
     print("Will draw spectrogram of given audio file ex. python audio.py test.wav")
     if len(sys.argv) == 2:
+        mixer.init()
+        sound = mixer.Sound(sys.argv[1])
+        sound.play()
+        time.sleep(10)        
         spectrogram(*to_mono(sys.argv[1]))[0].show()
+
