@@ -5,10 +5,12 @@ import matplotlib.pyplot as plt
 import time, sys
 from pygame import mixer
 
-(freq,sig) = wav.read(sys.argv[1])
+(freq,sig) = wav.read("c:/Users/DraKo/Documents/PDS/SegundoObjetivo/audio1.wav")
+
 mixer.init()
-sound = mixer.Sound(sys.argv[1])
+sound = mixer.Sound("c:/Users/DraKo/Documents/PDS/SegundoObjetivo/audio1.wav")
 sound.play()
 time.sleep(5)
 plt.plot(sig)
 plt.show()
+

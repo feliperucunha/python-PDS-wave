@@ -6,7 +6,7 @@ import time, sys
 from pygame import mixer
 from numpy.fft import fft
 
-(freq,sig) = wav.read(sys.argv[1])
+(freq,sig) = wav.read("c:/Users/DraKo/Documents/PDS/SegundoObjetivo/audio1.wav")
 n = len(sig)
 Fs = freq  # sampling rate
 Ts = 1.0/Fs  # sampling interval
