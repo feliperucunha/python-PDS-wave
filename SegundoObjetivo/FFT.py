@@ -17,5 +17,13 @@ frq = k/T
 frq = frq[range(n//2)]
 sigFFT = fft(sig)/n
 sigFFT = sigFFT[range(n//2)]
-plt.plot(frq,abs(sigFFT),'r')
+
+
+fig, ax = plt.subplots(2, 1)
+ax[0].plot(sig)
+ax[0].set_xlabel('Time')
+ax[0].set_ylabel('Amplitude')
+ax[1].plot(frq,abs(sigFFT),'r') # plotting the spectrum
+ax[1].set_xlabel('Freq (Hz)')
+ax[1].set_ylabel('|Y(freq)|')
 plt.show()
